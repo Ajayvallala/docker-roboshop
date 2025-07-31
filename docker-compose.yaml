@@ -14,7 +14,7 @@ services:
    depends_on:
    - mongodb
   redis:
-   image: redis:7
+   image: redis:7.0
    container_name: redis
   user:
    image: ajayvallala/user:v1
