@@ -11,10 +11,10 @@ RUN pip3 install --no-cache-dir --prefix=/install -r requirements.txt
 FROM python:3.9.23-alpine3.22
 EXPOSE 8080
 WORKDIR /opt/server
-# Runtime dependencies only and # Create app user
-RUN apk add --no-cache pcre \
-    && addgroup -S roboshop && adduser -S roboshop -G roboshop
-    
+# Runtime dependencies only
+RUN apk add --no-cache pcre
+# Create app user
+RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
 USER roboshop
 # Copy installed Python packages from builder
 COPY --from=builder /install /usr/local
