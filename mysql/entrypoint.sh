@@ -1,9 +1,9 @@
 #!/bin/bash
 
-if [ -f /tmp/mysql_root_password.txt ] then
+if [ -f /tmp/mysql_root_password.txt ]; then
   PASSWORD=$(cat /tmp/mysql_root_password.txt)
   echo "Root password accessed"
-  else
+ else
    echo "Password file not found"
    exit 1
 if
